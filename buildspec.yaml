@@ -1,9 +1,19 @@
 version: 0.2
-os: linux
-files: 
-  - source: /
-    destination: /usr/local/codedeploy/react-app-pooja
-hooks:
-  AfterInstall:
-    - location: ./transfer.sh
-      runas: root
+phases:
+  build:
+    commands:
+      - node -v
+      - npm install .
+      - npm run build
+      - ls -ltrha
+      - pwd
+      - ls -ltrha build
+cache:
+  paths:
+      - '/root/.npm/**/*' 
+artifacts:
+  files:
+    - build/**/*
+    - build/**
+    - appspec.yml
+    - transfer.sh
