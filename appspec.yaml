@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files: 
   - source: /
-    destination: /usr/local/codedeploy/react-p
+    destination: /usr/local/codedeploy/reactjs-bucket-p
 hooks:
   AfterInstall:
     - location: ./transfer.sh
