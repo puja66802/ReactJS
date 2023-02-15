@@ -15,5 +15,5 @@ artifacts:
   files:
     - build/**/*
     - build/**
-    - appspec.yaml
+    - appspec.yml
     - transfer.sh
